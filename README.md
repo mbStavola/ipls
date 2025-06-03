@@ -16,3 +16,13 @@ docker run -p 80:8000 ipls
 ```
 deno run -N main.ts  
 ```
+
+### Fly.io
+
+```
+# First deploy
+fly launch
+
+# Subsequent deploys
+fly deploy
+```

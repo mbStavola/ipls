@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for ipls on 2025-06-03T15:18:40-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'ipls'
+primary_region = 'ewr'
+
+[build]
+
+[processes]
+  app = 'run -N ./main.ts'
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  processes = ['app']
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
